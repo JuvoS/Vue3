@@ -29,10 +29,6 @@ export default {
         name: "TEMP ->"
       };
       console.log(temp);
-
-      this.$http.post('/dnalims/svc/loaddict', {}).then(function(res) {
-　　console.log(res)
-}.bind(this))
     }
   }
 }
