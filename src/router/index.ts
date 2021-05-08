@@ -3,13 +3,13 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [
   {
     path: "/",
-    name: "about",
-    component: () => import("/@/views/about.vue"),
+    name: "HomePage",
+    component: () => import("/@/views/home.vue"),
   },
   {
-    path: "/home",
-    name: "Home",
-    component: () => import("/@/views/home.vue"),
+    path: "/about",
+    name: "about",
+    component: () => import("/@/views/about.vue"),
   },
   {
     path: "/login",
@@ -26,23 +26,23 @@ const router =  createRouter({
 router.beforeEach((to: any, from: any, next: any) => {
    
     //判断该用户有没有登录过
-    if(to.path === '/Login'){
-        if (localStorage.getItem('userInfo')) {
-            next({ path: '' })
-        }else{
-            next();
-        }
-    }else{
-        if (localStorage.getItem('userInfo')) {
-            if(to.path ==='/home/'){
-                next({ path: '/home' })
-            }else{
+    // if(to.path === '/Login'){
+    //     if (localStorage.getItem('userInfo')) {
+    //         next({ path: '' })
+    //     }else{
+    //         next();
+    //     }
+    // }else{
+    //     if (localStorage.getItem('userInfo')) {
+    //         if(to.path ==='/home/'){
+    //             next({ path: '/home' })
+    //         }else{
                 next()
-            }
-        }else{
-            next({ path: '/Login' })
-        }
-    }
+    //         }
+    //     }else{
+    //         next({ path: '/Login' })
+    //     }
+    // }
  
     
 })

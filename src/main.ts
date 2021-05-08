@@ -11,4 +11,3 @@ app.use(router);
 app.use(store);
 app.use(Antd);
 app.mount("#vray");
-

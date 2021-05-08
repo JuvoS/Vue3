@@ -7,5 +7,6 @@ function pathResolve(dir: string) {
 module.exports = {
   alias: {
     "/@/": pathResolve("src"),
+    "/~/": pathResolve("src/components"),
   },
 };
